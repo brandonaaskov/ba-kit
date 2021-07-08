@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AirPlay Javascript Demo</title>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const player = document.querySelector("#player")
+      const button = document.querySelector("#airplay-button")
+      let isAirPlayAvailable = false
+
+      player.addEventListener("webkitplaybacktargetavailabilitychanged", event => {
+        if (event.availability === "available") {
+          isAirPlayAvailable = true
+        }
+      })
+
+      button.addEventListener("click", () => {
+        if (isAirPlayAvailable) {
+          player.webkitShowPlaybackTargetPicker()
+        }
+      })
+    })
+    </script>
+  </head>
+
+  <body>
+  <button id="airplay-button">Activate AirPlay Menu</button>
+  <video
+    id="player"
+    width="640"
+    height="360"
+    controls
+    src="https://cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+  >
+  </video>
+  </body>
+</html>
