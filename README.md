@@ -4,8 +4,6 @@ ba-kit
 Helpers and utilities
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/ba-kit.svg)](https://npmjs.org/package/ba-kit)
-[![Downloads/week](https://img.shields.io/npm/dw/ba-kit.svg)](https://npmjs.org/package/ba-kit)
 [![License](https://img.shields.io/npm/l/ba-kit.svg)](https://github.com/brandonaaskov/ba-kit/blob/master/package.json)
 
 <!-- toc -->
