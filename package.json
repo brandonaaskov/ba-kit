@@ -1,0 +1,66 @@
+{
+  "name": "ba-kit",
+  "description": "Helpers and utilities",
+  "version": "0.0.0",
+  "author": "Brandon Aaskov @brandonaaskov",
+  "bin": {
+    "ba-kit": "./bin/run"
+  },
+  "bugs": "https://github.com/brandonaaskov/ba-kit/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "inquirer": "^8.1.1",
+    "lodash": "^4.17.21",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@types/chai": "^4",
+    "@types/inquirer": "^7.3.2",
+    "@types/lodash": "^4.14.170",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "globby": "^10",
+    "mocha": "^5",
+    "nyc": "^14",
+    "oclif": "^1.18.1",
+    "sinon": "^11.1.1",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/brandonaaskov/ba-kit",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "ba-kit",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "brandonaaskov/ba-kit",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md",
+    "oclif": "./node_modules/.bin/oclif"
+  },
+  "types": "lib/index.d.ts"
+}
